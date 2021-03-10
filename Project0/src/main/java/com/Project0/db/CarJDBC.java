@@ -12,7 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-@TestClass
+
 public class CarJDBC implements GenericDao<String, Integer>{
 
     private static CarJDBC instance;
@@ -45,7 +45,6 @@ public class CarJDBC implements GenericDao<String, Integer>{
         }
     }
 
-    @TestMethod(name = "another test", expected = "null")
     @Override
     public String getById(Integer id) {
         return null;

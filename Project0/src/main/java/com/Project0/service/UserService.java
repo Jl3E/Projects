@@ -3,18 +3,19 @@ package com.Project0.service;
 import com.Project0.model.User;
 import com.Project0.db.GenericDao;
 import com.Project0.model.UserType;
+import com.enterprise.annotations.TestClass;
+import com.enterprise.annotations.TestMethod;
 
 public class UserService {
 
     private static User[] employees = new User[5];
     private static User[] customers = new User[10];
     GenericDao<User, String> uj;
-    private String ans;
 
     private static int currentCustomerIndex = -1;
     private static int currentEmployeeIndex = -1;
 
-    //public UserService(){}
+    public UserService(){}
     public UserService(GenericDao<User, String> uj) {
         this.uj = uj;
     }
@@ -40,7 +41,6 @@ public class UserService {
         return null;
     }
 
-    // TODO: Ensure duplicates do not exist, while minimizing calls to doesUsernameExist method.
     public boolean makeCustomer(String username, String password, String email){
         if(!doesCustomerUsernameExist(username)){
             if((currentCustomerIndex + 1) < employees.length){

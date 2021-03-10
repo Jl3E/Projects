@@ -7,8 +7,8 @@ import com.Project0.model.User;
 
 public class CarService {
 
-    private String[] carArray = new String[5];
-    private String[][] carOffersArray = new String[5][10]; //the first dimension should be the car name in a column, and each row offers for said cars.
+//    private String[] carArray = new String[5];
+//    private String[][] carOffersArray = new String[5][10];
     private static int currentIndex = 0;
     private static int currentCarIndex = -1;
     OfferJDBC oi = new OfferJDBC();
@@ -31,13 +31,13 @@ public class CarService {
     public void addCar(String carName){
         si.save(carName);
 
-        if(currentIndex < carArray.length){
-            carArray[currentIndex]=carName;
-            currentIndex++;
+//        if(currentIndex < carArray.length){
+//            carArray[currentIndex]=carName;
+//            currentIndex++;
 
-        }else{
-            System.out.println("error out of room.");// could made a bubble sort to make a new array double the size
-        }
+//        }else{
+//            System.out.println("error out of room.");// could made a bubble sort to make a new array double the size
+//        }
 
     }
 
@@ -54,14 +54,14 @@ public class CarService {
     public void carOffer(String carName, User u, String offer){
             oi.saveOffer(u, offer, carName);
 
-            if(currentCarIndex > -1) {
-                for (int i = 0; i < currentIndex; i++) {
-                    if (carArray[i].equals(carName)) {
-                        carOffersArray[i][currentCarIndex] = offer+" "+ u.getUsername();
-                        currentCarIndex++;
-                    }
-                }
-            }
+//            if(currentCarIndex > -1) {
+//                for (int i = 0; i < currentIndex; i++) {
+//                    if (carArray[i].equals(carName)) {
+//                        carOffersArray[i][currentCarIndex] = offer+" "+ u.getUsername();
+//                        currentCarIndex++;
+//                    }
+//                }
+//            }
 
     }
     public void carAcceptance(){
@@ -70,11 +70,11 @@ public class CarService {
 
     public void showCar(){
         si.getAll();
-        for(String str: carArray){
-            if(str != null)
-            System.out.println(str);
-
-        }
+//        for(String str: carArray){
+//            if(str != null)
+//            System.out.println(str);
+//
+//        }
     }
 
 }

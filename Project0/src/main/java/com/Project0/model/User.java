@@ -5,6 +5,7 @@ import com.enterprise.annotations.TestClass;
 import com.enterprise.annotations.TestMethod;
 
 import java.util.Objects;
+
 @TestClass
 public class User {
 
@@ -28,7 +29,7 @@ public class User {
         this.email = email;
         this.type = type;
     }
-    @TestMethod(name = "last test", expected = "username")
+
     public String getUsername() {
         return username;
     }

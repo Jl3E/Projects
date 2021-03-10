@@ -1,10 +1,8 @@
-package com.Project0.testing;
+package testing;
 
-import com.Project0.model.User;
 import com.enterprise.EnterpriseNoAppropriateConstructorFoundException;
 import com.enterprise.util.HashMap;
 import com.enterprise.util.TestDiscovery;
-import com.enterprise.EnterpriseNoAppropriateConstructorFoundException;
 
 public class TestingDriver {
 
@@ -16,6 +14,8 @@ public class TestingDriver {
         } catch (Exception var3) {
             var3.printStackTrace();
         }
+        TestClass1 tc1 = new TestClass1();
+
 
         System.out.println(resultmap);
     }
