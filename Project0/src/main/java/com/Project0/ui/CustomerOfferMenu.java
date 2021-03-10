@@ -11,12 +11,13 @@ public class CustomerOfferMenu {
     private int index = 0;
 
     public void showMenu(Scanner scan, CarService cs){
+        CustomerCarMenu ccm = new CustomerCarMenu(u);
 
         if (index > 0) {
             System.out.println("Welcome to the dealership" + u.getUsername() + "!");
             index++;
         }
-        System.out.println("1. View cars on lot\n2. Submit an offer\n3. Exit");
+        System.out.println("1. View cars on lot\n2. Submit an offer\n3. Previous Menu\n4. Exit");
         String ans = scan.nextLine();
         switch(ans){
             case "1":
@@ -38,9 +39,12 @@ public class CustomerOfferMenu {
                 showMenu(scan, cs);
                 break;
             case "3":
+                ccm.showMenu(scan);
+                break;
+            case "4":
                 return;
             default:
-                System.out.println("Error, enter 1,2,or 3.");
+                System.out.println("Error, enter 1,2,3 or 4.");
                 showMenu(scan, cs);
         }
     }

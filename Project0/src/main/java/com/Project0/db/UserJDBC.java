@@ -52,7 +52,7 @@ public class UserJDBC implements GenericDao<User, String> {
     @Override
     public User getById(String id) {
         try{
-            String sql = ("select * from get_all_users();");
+            String sql = ("select * from get_all_users();");//<------ Stored Function
             Statement st = ConnectionUtil.getInstance().getConnection().createStatement();
             ResultSet rs = st.executeQuery(sql);
 

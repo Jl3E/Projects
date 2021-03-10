@@ -19,7 +19,6 @@ public class EmployeeSignUpMenu {
 
         } while(us.doesCustomerUsernameExist(username));
         System.out.println("provide password");
-        // TODO: check phone number
         String password = scan.nextLine();
         System.out.println("provide email");
         String email = scan.nextLine();
