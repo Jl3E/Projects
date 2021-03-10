@@ -30,15 +30,6 @@ public class CarService {
 
     public void addCar(String carName){
         si.save(carName);
-
-//        if(currentIndex < carArray.length){
-//            carArray[currentIndex]=carName;
-//            currentIndex++;
-
-//        }else{
-//            System.out.println("error out of room.");// could made a bubble sort to make a new array double the size
-//        }
-
     }
 
     public void showCarsOwned(User u){
@@ -53,16 +44,6 @@ public class CarService {
 
     public void carOffer(String carName, User u, String offer){
             oi.saveOffer(u, offer, carName);
-
-//            if(currentCarIndex > -1) {
-//                for (int i = 0; i < currentIndex; i++) {
-//                    if (carArray[i].equals(carName)) {
-//                        carOffersArray[i][currentCarIndex] = offer+" "+ u.getUsername();
-//                        currentCarIndex++;
-//                    }
-//                }
-//            }
-
     }
     public void carAcceptance(){
 
@@ -70,11 +51,7 @@ public class CarService {
 
     public void showCar(){
         si.getAll();
-//        for(String str: carArray){
-//            if(str != null)
-//            System.out.println(str);
-//
-//        }
+
     }
 
 }

@@ -1,6 +1,6 @@
 package com.Project0.model;
 
-public class Car {//TODO: DELETE THIS CLASS IF YOU DON'T IMPLEMENT IT WITH THE JDCBFACTORY
+public class Car {
 
     private String carName;
     private int carId;

@@ -21,14 +21,11 @@ public class UserService {
     }
 
     public boolean doesCustomerUsernameExist(String username){
-        // O(n) time complexity O(1) space complexity
         return findCustomerByUsername(username) != null;
     }
 
     public User findCustomerByUsername(String username){
-        // O(n) time complexity O(1) space complexity
         if(uj.getById(username) != null){
-            //User u = uj.getById(username);
             return uj.getById(username);
         }
         if(currentCustomerIndex > -1) {
@@ -57,12 +54,10 @@ public class UserService {
     }
 
     public boolean doesEmployeeUsernameExist(String username){
-        // O(n) time complexity O(1) space complexity
         return findEmployeeByUsername(username) != null;
     }
 
     public User findEmployeeByUsername(String username){
-        // O(n) time complexity O(1) space complexity
         if(currentEmployeeIndex > -1) {
             for (int i = 0; i <= currentEmployeeIndex; i++) {
                 if (employees[i].getUsername().equals(username)) {

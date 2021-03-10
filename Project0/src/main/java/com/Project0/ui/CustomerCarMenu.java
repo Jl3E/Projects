@@ -12,7 +12,6 @@ import java.util.Scanner;
 public class CustomerCarMenu {
 
     private User u;
-    private final float AVERAGE_MONTHLY_CAR_PAYMENT = 430;
 
     public void showMenu(Scanner scan) {
 

@@ -12,34 +12,44 @@ import java.sql.Statement;
 
 public class OfferJDBC {
 
-    public float userMonthlyPayment(float loan){
-        float loanAmount = loan;
+    float input = 430;
+
+    public void setMonthlyPayment(float input){
+
+        this.input = input;
+    }
+
+    public float getMonthlyPayment(){
+
+        float loanAmount = input;
         float iRate = 0;
         float monthlyPayment;
 
-        if(loanAmount <= 1000.00){
-            iRate = (float) 0.10;
-            monthlyPayment = ((loanAmount*iRate)+loanAmount)/10;
-            return monthlyPayment;
-        } else if(loanAmount <=5000.00){
-            iRate = (float) 0.08;
-            monthlyPayment = ((loanAmount*iRate)+loanAmount)/20;
-            return monthlyPayment;
-        } else if (loanAmount <= 25000){
-            iRate = (float) 0.05;
-            monthlyPayment = ((loanAmount*iRate)+loanAmount)/60;
-            return monthlyPayment;
-        } else if (loanAmount <= 50000){
-            iRate = (float) 0.03;
-            monthlyPayment = ((loanAmount*iRate)+loanAmount)/120;
-            return monthlyPayment;
-        } else if (loanAmount <= 100000){
-            iRate = (float) 0.025;
-            monthlyPayment = ((loanAmount*iRate)+loanAmount)/120;
-            return monthlyPayment;
+        if(input == 430){
+            if(loanAmount <= 1000.00){
+                iRate = (float) 0.10;
+                monthlyPayment = ((loanAmount*iRate)+loanAmount)/10;
+                return monthlyPayment;
+            } else if(loanAmount <=5000.00){
+                iRate = (float) 0.08;
+                monthlyPayment = ((loanAmount*iRate)+loanAmount)/20;
+                return monthlyPayment;
+            } else if (loanAmount <= 25000){
+                iRate = (float) 0.05;
+                monthlyPayment = ((loanAmount*iRate)+loanAmount)/60;
+                return monthlyPayment;
+            } else if (loanAmount <= 50000){
+                iRate = (float) 0.03;
+                monthlyPayment = ((loanAmount*iRate)+loanAmount)/120;
+                return monthlyPayment;
+            } else if (loanAmount <= 100000){
+                iRate = (float) 0.025;
+                monthlyPayment = ((loanAmount*iRate)+loanAmount)/120;
+                return monthlyPayment;
+            }
         }
 
-        return 0;
+        return input;
     }
 
     public void submitOffer(int id, String carname, String name){
@@ -54,18 +64,6 @@ public class OfferJDBC {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-//        try {
-//            String sql = "delete from users_offers where carname like '%"+carname+"%';";
-//
-//            Statement st = ConnectionUtil.getInstance().getConnection().createStatement();
-//
-//            int i = st.executeUpdate(sql);
-//            System.out.println("The number of updated rows were " + i);
-//
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
 
         try {
             String sql = "update cars set ownership = '"+name+"' where carname like '%"+carname+"%';";
@@ -117,10 +115,8 @@ public class OfferJDBC {
             while (rs.next()) {
                 float s1 = rs.getFloat("offer");
                 String s2 = rs.getString("carname");
-                if(userMonthlyPayment(s1) == 0){
-                    return 0;
-                }
-                return s1/userMonthlyPayment(s1);
+
+                return s1/getMonthlyPayment();
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -176,7 +172,6 @@ public class OfferJDBC {
         return false;
     }
 
-    //TODO: change the return type to void if possible
     public int saveOffer(User u, String offer, String carname) {
 
         boolean accepted = false;

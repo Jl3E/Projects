@@ -19,7 +19,7 @@ public class LoginMenu {
             System.out.println("login failed");
         } else if(u.getUserType().equals(UserType.EMPLOYEE)){
             System.out.println("Welcome to the Dealership employee staff.");
-            EmployeeCarMenu mm = new EmployeeCarMenu();// this will be replaced with EmployeeCarMenu
+            EmployeeCarMenu mm = new EmployeeCarMenu();
             mm.showMenu(scan);
         } else{
             System.out.println("congratulations, search the numbers models of cars in stock!");

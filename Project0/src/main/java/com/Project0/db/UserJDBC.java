@@ -81,9 +81,6 @@ public class UserJDBC implements GenericDao<User, String> {
         return null;
     }
 
-    //going into the GenericDao and making this void for now instead of CarCollections
-    //because i need to implement a hashmap still(public CarCollection getAll()--> public void getAll()
-    // TODO: implement hashmap to use here as a return type instead of void
     @Override
     public void getAll() {
         try {

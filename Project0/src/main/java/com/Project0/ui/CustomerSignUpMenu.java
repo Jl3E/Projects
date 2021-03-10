@@ -10,11 +10,9 @@ public class CustomerSignUpMenu {
 
     public void showMenu(Scanner scan){
 
-//       UserService us = new UserService();
         UserService us = new UserService(JDBCFactory.daoFactory(User.class));
         System.out.println("====Welcome to the Dealership====");
         String username = "";
-        // hey something is wrong
         do{
             System.out.println("provide username");
             username = scan.nextLine();
